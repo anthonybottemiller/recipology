@@ -10,3 +10,9 @@
     color: white;
     margin: 10px;
 }
+
+.footer-content .btn-primary {
+    color: black;
+    background-color: white;
+    font-weight: bold;
+}
