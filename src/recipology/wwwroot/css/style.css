@@ -1,6 +1,12 @@
 ﻿.footer {
+    background-color: black;
     position: fixed;
-    bottom: 5px;
-    left: 5px;
+    bottom: 0px;
+    left: 0px;
     right: 0;
+}
+
+.footer-content {
+    color: white;
+    margin: 10px;
 }
