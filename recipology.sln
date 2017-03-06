@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A7D5CA4C-F5E8-4416-994C-D15E6E6AEE47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{45D35676-E39B-41D2-87B8-65B07DA6DC4F}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "recipology", "src\recipology\recipology.xproj", "{FE739F4A-53E2-41B2-B3D6-50A3AD7295FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE739F4A-53E2-41B2-B3D6-50A3AD7295FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE739F4A-53E2-41B2-B3D6-50A3AD7295FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE739F4A-53E2-41B2-B3D6-50A3AD7295FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE739F4A-53E2-41B2-B3D6-50A3AD7295FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FE739F4A-53E2-41B2-B3D6-50A3AD7295FE} = {A7D5CA4C-F5E8-4416-994C-D15E6E6AEE47}
+	EndGlobalSection
+EndGlobal
