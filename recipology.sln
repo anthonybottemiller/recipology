@@ -1,16 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A7D5CA4C-F5E8-4416-994C-D15E6E6AEE47}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{45D35676-E39B-41D2-87B8-65B07DA6DC4F}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "recipology", "src\recipology\recipology.xproj", "{FE739F4A-53E2-41B2-B3D6-50A3AD7295FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "recipology", "src\recipology\recipology.csproj", "{FE739F4A-53E2-41B2-B3D6-50A3AD7295FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
