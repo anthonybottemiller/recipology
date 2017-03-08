@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Recipology.Models;
 using Microsoft.AspNetCore.Identity;
 using Recipology.ViewModels;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace recipology.Controllers
 {
@@ -63,6 +63,7 @@ namespace recipology.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult KeepRecipe(int id)
         {
