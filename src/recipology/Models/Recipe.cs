@@ -12,8 +12,11 @@ namespace Recipology.Models
     {
         [Key]
         public int RecipeId { get; set; }
+        [Required]
         public string Name { get; set; }
+        [Required]
         public string Description { get; set; }
+        [Required]
         public string Ingredients { get; set; }
     }
 }
