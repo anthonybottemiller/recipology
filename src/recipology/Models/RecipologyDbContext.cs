@@ -15,6 +15,7 @@ namespace Recipology.Models
         }
         public DbSet<Recipe> Recipes { get; set; }
         public DbSet<UsersRecipes> UsersRecipes { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; } 
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
