@@ -41,6 +41,7 @@ namespace Recipology
         {
             loggerFactory.AddConsole();
             app.UseStaticFiles();
+            app.UseIdentity();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

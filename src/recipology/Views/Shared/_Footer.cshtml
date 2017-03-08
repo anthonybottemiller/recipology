@@ -3,5 +3,14 @@
         <h1>Recipology</h1>
         <a href='@Url.Action("Index", "Home")' class="btn btn-primary">Home</a>
         <a href='@Url.Action("Create", "Recipes")' class="btn btn-primary">Add a Recipe</a>
+        @if (!Context.User.Identity.IsAuthenticated)
+        {
+            <a href='@Url.Action("Register", "Account")' class="btn btn-primary">Sign Up</a>
+            <a href='@Url.Action("Login", "Account")' class="btn btn-primary">Log In</a>
+        }
+        @if (Context.User.Identity.IsAuthenticated)
+        {
+            <a href='@Url.Action("Logout", "Account")' class="btn btn-primary">Log Out</a>
+        }
     </div>
 </div>
