@@ -10,7 +10,31 @@
     {
         <div class="recipe">
             <h4>@recipe.Name</h4>
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "keep-recipe-" + recipe.RecipeId }))
+            {
+                <input class="btn btn-primary" type="submit" value="Keep this recipe" />
+            }
+            <div id="recipe-@recipe.RecipeId-ajax-result"></div>
         </div>
+        <script>
+            $('#keep-recipe-@recipe.RecipeId').submit(function (event) {
+                event.preventDefault();
+                $.ajax({
+                    url: '@Url.Action("KeepRecipe", "Account", new { id = recipe.RecipeId})',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: $(this).serialize(),
+                    success: function (result) {
+                        var resultMessage = 'It worked';
+                        $('#recipe-@recipe.RecipeId-ajax-result').html(resultMessage);
+                    },
+                    failure: function (result) {
+                        var resultMessage = 'Something went wrong!';
+                        $('#recipe-@recipe.RecipeId-ajax-result').html(resultMessage);
+                    }
 
+                });
+            });
+        </script>
     }
 </div>

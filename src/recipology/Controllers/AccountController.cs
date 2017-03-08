@@ -7,13 +7,12 @@ using Recipology.Models;
 using Microsoft.AspNetCore.Identity;
 using Recipology.ViewModels;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace recipology.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly RecipologyDbContext _db;
+        private RecipologyDbContext _db;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
 
@@ -62,6 +61,15 @@ namespace recipology.Controllers
             {
                 return View();
             }
+        }
+
+        [HttpPost]
+        public IActionResult KeepRecipe(int id)
+        {
+            ApplicationUser user = _db.ApplicationUsers.FirstOrDefault(users => users.UserName == User.Identity.Name);
+            Recipe recipe = _db.Recipes.FirstOrDefault(recipes => recipes.RecipeId == id);
+            user.AddRecipe(recipe.RecipeId);
+            return Json(recipe);
         }
 
         public async Task<IActionResult> Logout()
