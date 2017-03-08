@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Popular Recipes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<Recipology.Models.Recipe>
+
+<div class="recipe-list">
+    <h1>Top Recipes</h1>
+    @foreach(var recipe in Model)
+    {
+        <div class="recipe">
+            <h4>@recipe.Name</h4>
+        </div>
+
+    }
+</div>

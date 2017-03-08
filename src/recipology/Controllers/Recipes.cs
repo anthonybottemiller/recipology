@@ -11,6 +11,12 @@ namespace recipology.Controllers
     {
         private RecipologyDbContext db = new RecipologyDbContext();
 
+        public IActionResult Top()
+        {
+            return View(db.Recipes.ToList());
+        }
+
+
         public IActionResult Create()
         {
             return View();

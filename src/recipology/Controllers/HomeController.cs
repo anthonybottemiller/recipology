@@ -13,7 +13,7 @@ namespace Recipology.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
+           return RedirectToAction("Top", "Recipes");
         }
     }
 }
