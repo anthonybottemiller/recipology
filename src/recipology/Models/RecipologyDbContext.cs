@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using recipology.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
