@@ -11,6 +11,7 @@
         @if (Context.User.Identity.IsAuthenticated)
         {
             <a href='@Url.Action("Logout", "Account")' class="btn btn-primary">Log Out</a>
+            <a href='@Url.Action("MyCookbook", "Account")' class="btn btn-primary">My Cookbook</a>
         }
     </div>
 </div>

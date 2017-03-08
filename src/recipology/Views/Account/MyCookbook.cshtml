@@ -1,5 +1,12 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "My CookBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@model IEnumerable<Recipology.Models.Recipe>
+<ul>
+@foreach(var recipe in Model)
+{
+    <li>@recipe.Name</li>
+}
+</ul>
