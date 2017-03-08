@@ -10,16 +10,20 @@ namespace Recipology.Models
     [Table("UsersRecipes")]
     public class UsersRecipes
     {
-        public UsersRecipes(string userId, int recipeId)
+        public UsersRecipes()
+        {
+
+        }
+        public UsersRecipes(string userName, int recipeId)
         {
             this.RecipeId = recipeId;
-            this.UserId = userId;
+            this.UserName = userName;
         }
 
         [Key]
         public int Id { get; set; }
 
-        public string UserId { get; set; }
+        public string UserName { get; set; }
 
         public int RecipeId { get; set; }
     }

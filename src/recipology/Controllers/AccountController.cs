@@ -72,6 +72,15 @@ namespace recipology.Controllers
             return Json(recipe);
         }
 
+        public IActionResult MyCookbook()
+        {
+            var joinEntries = from j in _db.UsersRecipes
+                              where j.UserName == User.Identity.Name
+                              select j;
+            var cookbook = new List<Recipe>();
+            return View();
+        }
+
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();

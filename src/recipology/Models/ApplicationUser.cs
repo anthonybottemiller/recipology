@@ -14,7 +14,7 @@ namespace Recipology.Models
         {
             var db = new RecipologyDbContext();
             var newRecipe = db.Recipes.FirstOrDefault(recipes => recipes.RecipeId == _RecipeId);
-            var NewJoinEntry = new UsersRecipes(this.Id, newRecipe.RecipeId);
+            var NewJoinEntry = new UsersRecipes(this.UserName, newRecipe.RecipeId);
             db.UsersRecipes.Add(NewJoinEntry);
             db.SaveChanges();
         }
