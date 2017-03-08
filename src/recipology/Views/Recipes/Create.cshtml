@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Add a Recipe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Recipology.Models.Recipe
+
+<div class="recipe-form">
+    <h2>Time to add a Recipe</h2>
+    @using (Html.BeginForm())
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name)
+            @Html.TextBoxFor(model => model.Name)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description)
+            @Html.TextBoxFor(model => model.Description)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Ingredients)
+            @Html.TextBoxFor(model => model.Ingredients)
+        </div>
+        <input class="btn btn-success" type="submit" value="Sign Up Now!" />
+    }
+</div>
