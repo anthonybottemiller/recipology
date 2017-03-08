@@ -74,11 +74,13 @@ namespace recipology.Controllers
 
         public IActionResult MyCookbook()
         {
-            var joinEntries = from j in _db.UsersRecipes
-                              where j.UserName == User.Identity.Name
-                              select j;
-            var cookbook = new List<Recipe>();
-            return View();
+            var cookbook = from r in _db.Recipes
+                              join jt in _db.UsersRecipes on r.RecipeId equals jt.RecipeId
+                              join usr in _db.Users on jt.UserName equals usr.UserName
+                              where usr.UserName == User.Identity.Name
+                              select r;
+
+            return View(cookbook);
         }
 
         public async Task<IActionResult> Logout()
