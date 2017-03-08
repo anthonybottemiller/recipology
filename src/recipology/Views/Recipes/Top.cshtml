@@ -25,11 +25,13 @@
                     dataType: 'json',
                     data: $(this).serialize(),
                     success: function (result) {
-                        var resultMessage = 'It worked';
+                        var resultMessage = result.serverMessage;
+                        $('#recipe-@recipe.RecipeId-ajax-result').empty();
                         $('#recipe-@recipe.RecipeId-ajax-result').html(resultMessage);
                     },
                     failure: function (result) {
                         var resultMessage = 'Something went wrong!';
+                        $('#recipe-@recipe.RecipeId-ajax-result').empty();
                         $('#recipe-@recipe.RecipeId-ajax-result').html(resultMessage);
                     }
 

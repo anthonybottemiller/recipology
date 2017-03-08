@@ -68,8 +68,35 @@ namespace recipology.Controllers
         {
             ApplicationUser user = _db.ApplicationUsers.FirstOrDefault(users => users.UserName == User.Identity.Name);
             Recipe recipe = _db.Recipes.FirstOrDefault(recipes => recipes.RecipeId == id);
-            user.AddRecipe(recipe.RecipeId);
-            return Json(recipe);
+            var duplicateRecipe = from r in _db.Recipes
+                              join jt in _db.UsersRecipes on r.RecipeId equals jt.RecipeId
+                              join usr in _db.Users on jt.UserName equals usr.UserName
+                              where usr.UserName == User.Identity.Name
+                              where r.RecipeId == recipe.RecipeId
+                              select r;
+            if (duplicateRecipe.Count() > 0)
+            {
+                return Json(new
+                {
+                    isValid = "False",
+                    serverMessage = "You already have this recipe!"
+                });
+            }
+            if (user != null)
+            {
+                user.AddRecipe(recipe.RecipeId);
+                return Json(new {
+                    isValid = "True",
+                    serverMessage = recipe.Name + " is now in your cookbook!"
+                });
+            }
+            else
+            {
+                return Json(new {
+                    isValid = "False",
+                    serverMessage = "There was a problem with your request are you signed in?"
+                });
+            }
         }
 
         public IActionResult MyCookbook()
