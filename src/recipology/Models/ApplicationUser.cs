@@ -8,5 +8,6 @@ namespace Recipology.Models
 {
     public class ApplicationUser : IdentityUser
     {
+        public ICollection<UsersRecipes> UsersRecipes { get; set; }
     }
 }

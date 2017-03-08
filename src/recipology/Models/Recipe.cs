@@ -18,5 +18,7 @@ namespace Recipology.Models
         public string Description { get; set; }
         [Required]
         public string Ingredients { get; set; }
+
+        public ICollection<UsersRecipes> UsersRecipes { get; set;}
     }
 }
