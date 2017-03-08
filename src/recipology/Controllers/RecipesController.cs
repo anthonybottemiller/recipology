@@ -14,7 +14,10 @@ namespace recipology.Controllers
 
         public IActionResult Top()
         {
-            return View(db.Recipes.ToList());
+            var topRecipes = from r in db.Recipes
+                             orderby r.TimesForked descending
+                             select r;
+            return View(topRecipes);
         }
 
         [Authorize]

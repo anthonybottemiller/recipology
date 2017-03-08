@@ -7,6 +7,7 @@ using Recipology.Models;
 using Microsoft.AspNetCore.Identity;
 using Recipology.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 
 namespace recipology.Controllers
 {
@@ -85,6 +86,9 @@ namespace recipology.Controllers
             }
             if (user != null)
             {
+                recipe.TimesForked++;
+                _db.Entry(recipe).State = EntityState.Modified;
+                _db.SaveChanges();
                 user.AddRecipe(recipe.RecipeId);
                 return Json(new {
                     isValid = "True",

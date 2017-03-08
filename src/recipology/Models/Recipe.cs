@@ -11,6 +11,11 @@ namespace Recipology.Models
     [Table("Recipes")]
     public class Recipe
     {
+        public Recipe()
+        {
+            TimesForked = 0;
+        }
+
         [Key]
         public int RecipeId { get; set; }
         [Required]
@@ -19,6 +24,8 @@ namespace Recipology.Models
         public string Description { get; set; }
         [Required]
         public string Ingredients { get; set; }
+
+        public int TimesForked { get; set; }
 
         public ICollection<UsersRecipes> UsersRecipes { get; set;}
 
