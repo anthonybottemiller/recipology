@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Recipology.Models;
 
 namespace Recipology
 {
@@ -28,6 +29,12 @@ namespace Recipology
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddEntityFramework()
+                .AddDbContext<RecipologyDbContext>(options =>
+                options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<RecipologyDbContext>()
+                .AddDefaultTokenProviders();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

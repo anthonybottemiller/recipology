@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using recipology.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Recipology.Models
 {
-    public class RecipologyDbContext : DbContext
+    public class RecipologyDbContext : IdentityDbContext<ApplicationUser>
     {
         public RecipologyDbContext()
         {
