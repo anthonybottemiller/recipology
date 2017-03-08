@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -20,5 +21,15 @@ namespace Recipology.Models
         public string Ingredients { get; set; }
 
         public ICollection<UsersRecipes> UsersRecipes { get; set;}
+
+        public ICollection<Recipe> RecipeHistory { get; set; }
+
+        public void AddVersion(Recipe recipe)
+        {
+            this.RecipeHistory.Add(recipe);
+            var db = new RecipologyDbContext();
+            db.Entry(this).State = EntityState.Modified;
+            db.SaveChanges();
+        }
     }
 }
