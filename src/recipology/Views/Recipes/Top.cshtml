@@ -10,6 +10,7 @@
     {
         <div class="recipe">
             <h4>@recipe.Name</h4>
+            <h6>By @recipe.Author</h6>
             @using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "keep-recipe-" + recipe.RecipeId }))
             {
                 <input class="btn btn-primary" type="submit" value="Fork this recipe!" />

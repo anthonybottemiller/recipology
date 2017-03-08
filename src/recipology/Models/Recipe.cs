@@ -25,6 +25,8 @@ namespace Recipology.Models
         [Required]
         public string Ingredients { get; set; }
 
+        public string Author { get; set; }
+
         public int TimesForked { get; set; }
 
         public ICollection<UsersRecipes> UsersRecipes { get; set;}

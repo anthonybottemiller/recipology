@@ -30,8 +30,11 @@ namespace recipology.Controllers
         [HttpPost]
         public IActionResult Create(Recipe recipe)
         {
+            ApplicationUser user = db.ApplicationUsers.FirstOrDefault(users => users.UserName == User.Identity.Name);
+            recipe.Author = User.Identity.Name;
             db.Recipes.Add(recipe);
             db.SaveChanges();
+            user.AddRecipe(recipe.RecipeId);
             return RedirectToAction("Index", "Home");
         }
 
