@@ -12,7 +12,7 @@
             <h4>@recipe.Name</h4>
             @using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "keep-recipe-" + recipe.RecipeId }))
             {
-                <input class="btn btn-primary" type="submit" value="Keep this recipe" />
+                <input class="btn btn-primary" type="submit" value="Fork this recipe!" />
             }
             <div id="recipe-@recipe.RecipeId-ajax-result"></div>
         </div>
