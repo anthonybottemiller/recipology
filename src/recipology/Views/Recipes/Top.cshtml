@@ -4,21 +4,21 @@
 }
 @model IEnumerable<Recipology.Models.Recipe>
 
-<div class="recipe-list">
+<div class="recipe-list col-md-9">
     <h1>Top Recipes</h1>
-    @foreach(var recipe in Model)
-    {
-        <div class="recipe">
-            <h4>@recipe.Name</h4>
-            <h6>By @recipe.Author</h6>
-            @using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "keep-recipe-" + recipe.RecipeId }))
-            {
-                <input class="btn btn-primary" type="submit" value="Fork this recipe!" />
-                <a class="btn btn-primary" href='@Url.Action("Detail", "Recipes", new { id = recipe.RecipeId })'>Recipe Detail</a>
-            }
-            <div id="recipe-@recipe.RecipeId-ajax-result"></div>
-        </div>
-        <script>
+        @foreach (var recipe in Model)
+        {
+            <div class="recipe">
+                <h4>@recipe.Name</h4>
+                <h6>By @recipe.Author</h6>
+                @using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "keep-recipe-" + recipe.RecipeId }))
+                {
+                    <input class="btn btn-primary" type="submit" value="Fork this recipe!" />
+                    <a class="btn btn-primary" href='@Url.Action("Detail", "Recipes", new { id = recipe.RecipeId })'>Recipe Detail</a>
+                }
+                <div id="recipe-@recipe.RecipeId-ajax-result"></div>
+            </div>
+            <script>
             $('#keep-recipe-@recipe.RecipeId').submit(function (event) {
                 event.preventDefault();
                 $.ajax({
@@ -39,6 +39,6 @@
 
                 });
             });
-        </script>
-    }
+            </script>
+        }
 </div>
