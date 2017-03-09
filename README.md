@@ -25,9 +25,6 @@ This project looks to utilize Microsoft Identity and Entity Framework with SQL S
 * .NET CORE
 * Internet Access
 
-##Style Inspiration
-The style of the project was inspired by [Bjarne Stroustrup](http://www.stroustrup.com/)
-
 ##Installation
 * Clone repository
 * Using command line change working directory to cloned repository/src/recipology
