@@ -38,5 +38,10 @@ namespace recipology.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public IActionResult Detail(int id)
+        {
+            var recipe = db.Recipes.Find(id);
+            return View(recipe);
+        }
     }
 }

@@ -14,6 +14,7 @@
             @using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "keep-recipe-" + recipe.RecipeId }))
             {
                 <input class="btn btn-primary" type="submit" value="Fork this recipe!" />
+                <a class="btn btn-primary" href='@Url.Action("Detail", "Recipes", new { id = recipe.RecipeId })'>Recipe Detail</a>
             }
             <div id="recipe-@recipe.RecipeId-ajax-result"></div>
         </div>

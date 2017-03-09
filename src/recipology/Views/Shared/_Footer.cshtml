@@ -6,7 +6,7 @@
             <h5>Welcome @User.Identity.Name!</h5>
 
         }
-        <a href='@Url.Action("Index", "Home")' class="btn btn-primary">Home</a>
+        <a href='@Url.Action("Index", "Home")' class="btn btn-primary">Top Recipes</a>
         <a href='@Url.Action("Create", "Recipes")' class="btn btn-primary">Add a Recipe</a>
         @if (!Context.User.Identity.IsAuthenticated)
         {

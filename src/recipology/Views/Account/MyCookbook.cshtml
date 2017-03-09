@@ -6,10 +6,12 @@
 @model IEnumerable<Recipology.Models.Recipe>
 <div class="cookbook">
     <h3>@User.Identity.Name's Cookbook</h3>
-    <ul>
-    @foreach(var recipe in Model)
-    {
-        <li>@recipe.Name</li>
-    }
-    </ul>
+    <div class="cookbook-entry">
+        <ul>
+            @foreach (var recipe in Model)
+            {
+                <li>@recipe.Name <a class="btn btn-primary" href='@Url.Action("Detail", "Recipes", new { id = recipe.RecipeId })'>Recipe Detail</a></li>
+            }
+        </ul>
+    </div>
 </div>

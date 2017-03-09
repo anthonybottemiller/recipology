@@ -64,7 +64,6 @@ namespace recipology.Controllers
             }
         }
 
-        [Authorize]
         [HttpPost]
         public IActionResult KeepRecipe(int id)
         {
