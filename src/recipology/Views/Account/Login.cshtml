@@ -5,16 +5,18 @@
 @using Recipology.ViewModels
 
 @model LoginViewModel
+<div class="login-form">
+    <h2>Log in to Recipology</h2>
+    <hr />
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        @Html.LabelFor(m => m.UserName)
+        @Html.TextBoxFor(m => m.UserName)
 
-<h2>Log in to Recipology</h2>
-<hr />
-@using (Html.BeginForm())
-{
-    <label>User Name</label>
-    @Html.TextBoxFor(m => m.UserName)
+        @Html.LabelFor(m => m.Password)
+        @Html.PasswordFor(m => m.Password)
 
-    @Html.LabelFor(m => m.Password)
-    @Html.PasswordFor(m => m.Password)
-
-    <input type="submit" value="Log in" class="btn btn-default" />
-}
+        <input type="submit" value="Log in" class="btn btn-default" />
+    }
+</div>
