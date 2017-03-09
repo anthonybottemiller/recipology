@@ -2,7 +2,7 @@
 
 #####This project brings version control to recipes!
 
-#####By Anthony J Bottemiller - 3-6-2016
+#####By Anthony J Bottemiller - 3-9-2016
 
 ##Description
 This project looks to utilize Microsoft Identity and Entity Framework with SQL Server to allow users to have meaningful version control for their recipes.
@@ -15,6 +15,10 @@ This project looks to utilize Microsoft Identity and Entity Framework with SQL S
 * .NET Core
 * ASP.NET MVC
 * Razor
+* AJAX
+* Microsoft .NET Identity
+* Microsoft Entity Framework
+* Microsoft SQL Server
 
 ##Requirements
 * Modern Web Browser
@@ -26,8 +30,10 @@ The style of the project was inspired by [Bjarne Stroustrup](http://www.stroustr
 
 ##Installation
 * Clone repository
-* Using command line change working directory to cloned repository
+* Using command line change working directory to cloned repository/src/recipology
 * Execute command "dotnet restore" in order to resolve project dependencies
+* Execute command "dotnet ef migrations add init" in order to generate a migration script to initialize your database
+* Execute command "dotnet ef database update" to initialize your database
 * Execute command "dotnet run"
 * Navigate to [webserver](http://localhost:5000) using your favorite browser
 
