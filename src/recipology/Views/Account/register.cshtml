@@ -11,6 +11,7 @@
     <h4>Register new Administrator</h4>
     @using (Html.BeginForm("Register", "Account", FormMethod.Post))
     {
+        @Html.ValidationMessageFor(m => m.ConfirmPassword)
         @Html.ValidationSummary(true)
         <div class="form-group">
             @Html.LabelFor(m => m.UserName)
