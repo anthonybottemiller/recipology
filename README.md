@@ -23,6 +23,7 @@ This project looks to utilize Microsoft Identity and Entity Framework with SQL S
 ##Requirements
 * Modern Web Browser
 * .NET CORE
+* MS SQL Server
 * Internet Access
 
 ##Installation
