@@ -4,9 +4,12 @@
 }
 
 @model IEnumerable<Recipology.Models.Recipe>
-<ul>
-@foreach(var recipe in Model)
-{
-    <li>@recipe.Name</li>
-}
-</ul>
+<div class="cookbook">
+    <h3>@User.Identity.Name's Cookbook</h3>
+    <ul>
+    @foreach(var recipe in Model)
+    {
+        <li>@recipe.Name</li>
+    }
+    </ul>
+</div>
